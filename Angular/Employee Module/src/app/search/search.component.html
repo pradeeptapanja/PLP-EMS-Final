@@ -1,0 +1,67 @@
+<body>
+  <table>
+<tr>
+<td >
+<form (ngSubmit)="searchEmployeeByDomain()" #addForm="ngForm">
+  <div class="form-group">
+    <td>Select Domain : </td>
+    <td><select [(ngModel)]="domain" name="domain" #domainName=ngModel required class="form-control">
+        <option disabled selected>--Select--</option>
+        <option [value]="a" *ngFor="let a of domains" >{{a}}</option>
+      </select>
+    </td>
+  </div>
+  <div class="form-group">
+    <button name="domainSearch" type="submit" [disabled]="!addForm.valid" class="btn btn-info">Search Employee</button>
+  </div>
+</form>
+</td>
+<thead></thead>
+<td>
+<form (ngSubmit)="searchEmployeeByDesignation()" #newForm="ngForm">
+  <div class="form-group">
+    <td>Select Designation : </td>
+    <td><select [(ngModel)]="designation" name="designation" #designationName=ngModel required class="form-control">
+        <option disabled selected>--Select--</option>
+        <option [value]="a" *ngFor="let a of designations" >{{a}}</option>
+      </select>
+    </td>
+  </div>
+  <div class="form group">
+    <button name="designationSearch" type="submit" [disabled]="!newForm.valid" class="btn btn-info">Search Employee</button>
+  </div>
+</form>
+</td>
+</tr>
+</table>
+
+<div [hidden]="!found">
+  <table class="table table-bordered">
+      <thead>
+        <tr style="font-weight:bold">
+          <th scope="col">Employee ID</th>
+          <th scope="col">Employee Name</th>
+          <th scope="col">Employee PAN</th>
+          <th scope="col">Designation</th>
+          <th scope="col">Domain</th>
+          <th scope="col">Employee Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tra of employees | paginate: { itemsPerPage: 3, currentPage: p }">
+          <th>{{tra.empId}}</th> 
+          <th>{{tra.name}}</th>
+          <th>{{tra.pan}}</th>
+          <th>{{tra.designation}}</th>
+          <th>{{tra.domain}}</th>
+          <th>{{tra.email}}</th>
+          <!--<td><button class="btn btn-warning" (click)="delete(i)">Delete Customer</button></td>-->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class = "text-right">
+    <pagination-controls class="pagination" (pageChange)= "p = $event"></pagination-controls>
+  </div>
+  </body>

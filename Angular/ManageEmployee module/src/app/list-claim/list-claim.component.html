@@ -1,0 +1,48 @@
+<!-- <form (ngSubmit)="listClaim()">
+  <div class="form group">
+    <label>Enter Claim ID</label><br>
+    <input type="number" [(ngModel)]=expenseClaims.claimId name="claimId"><br><br>
+  </div>
+  <div class="form group">
+    <button type="submit" class="btn btn-success">Search Expense Claim</button>
+  </div>
+</form> -->
+<body>
+<form (ngSubmit)="listClaim()" #addForm="ngForm">
+    <div class="form-group">
+      <label>Enter Claim Id</label><br>
+    <input type="number" [(ngModel)]=expenseClaims.claimId name="claimId" #claimId=ngModel placeholder="Enter Claim ID" required pattern="[0-9]{5}">
+      <!-- <span *ngIf="claimId.touched && claimId.invalid && (claimId.errors.required || claimId.errors.pattern)" class="alert-warning">
+        Invalid name or field Empty !!
+      </span> -->
+      <button class="btn btn-success" (click)="listClaim()">Search</button>
+      <hr>
+  <div [hidden]="submitted">
+    <table class="table table-bordered">
+      <tr>
+        <th>Employee Id</th>
+        <th>Project Id</th>
+        <th>Client Id</th>
+        <th>Expense Id</th>
+        <th>Amount</th>
+        <th>Claim Date</th>
+        <!-- <th>End Date</th> -->
+        <th>Status</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>{{expenseClaims.employeeId}}</td>
+        <td>{{expenseClaims.projectId}}</td>
+        <td>{{expenseClaims.clientId}}</td>
+        <td>{{expenseClaims.expenseId}}</td>
+        <td>{{expenseClaims.amount}}</td>
+        <td>{{expenseClaims.startDate}}</td>
+        <!-- <td>{{expenseClaims.endDate}}</td> -->
+        <td>{{expenseClaims.status}}</td>
+        <td>{{expenseClaims.description}}</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  </form>
+</body>

@@ -1,0 +1,21 @@
+<body><table class="table table-bordered">
+    <thead>
+        <tr>
+          <th colspan="3"><h4><b> All Expenses </b></h4></th>
+        </tr>
+      </thead>
+  <tr>
+    <th>Expense Code</th>
+    <th>Expense Type</th>
+    <th>Expense Description</th>
+  </tr>
+  <tr *ngFor="let e of expenses | paginate:{itemsPerPage: 5, currentPage:p}">
+    <td>{{e.expenseCode}}</td>
+    <td>{{e.expenseType}}</td>
+    <td>{{e.expenseDescription}}</td>
+  </tr>
+</table>
+<div class="text-right">
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>
+</body>

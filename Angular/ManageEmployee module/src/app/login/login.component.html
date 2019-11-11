@@ -1,0 +1,63 @@
+<!-- <div class="container">
+  <h2>Login Admin</h2>
+  <form (ngSubmit)="loginAdmin()" #addForm="ngForm">
+    <div class="container" style="padding: 8px;">
+      <div class="form-group"
+        style=" width: 1000px; opacity: 0.97; text-align: justify; background-color: khaki; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: larger;">
+        <table style="color: maroon; border-collapse: separate; " class="table table-hover">
+          <tr>
+            <td width="25%">Admin ID : </td>
+            <td>
+              <input type="text" placeholder="Enter Admin ID" [(ngModel)]=adminId name="adminid" #adminid=ngModel
+                focused=false required pattern="[A]{2}[0-9]{5}" class="form-control" id="empId" required>
+              <span *ngIf="adminid.touched && adminid.invalid" class="alert-warning">
+                Invalid Admin ID. Should start with 'AA' followed by 5 integers. E.g. AA56015
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td width="25%">Password : </td>
+            <td><input type="password" placeholder="Enter password" [(ngModel)]=password name="adminPassword"
+                #adminPassword=ngModel class="form-control" id="password" minLength="6" maxLength="20" required>
+              <span
+                *ngIf="adminPassword.touched && adminPassword.invalid && (adminPassword.errors.required || adminPassword.errors.pattern)"
+                class="alert-warning">
+                Invalid password. Must be atleast 6 characters long.
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <button type="submit" [disabled]="!addForm.valid" class="btn btn-info">Login</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </form>
+</div> -->
+<body>
+  <div class="container">
+    <section id="content">
+      <form (ngSubmit)="loginAdmin()" #addForm="ngForm">
+        <h1>Login Admin</h1>
+        <div class="row">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-10">
+            <div>
+              <input type="text" placeholder="Enter Admin ID" [(ngModel)]=adminId name="adminid" #adminid=ngModel
+                focused=false required pattern="[A]{2}[0-9]{5}" class="form-control" id="empId" required>
+            </div>
+            <div>
+              <input type="password" placeholder="Enter Password" [(ngModel)]=password name="adminPassword"
+                #adminPassword=ngModel class="form-control" id="password" minLength="6" maxLength="20" required>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button type="submit" [disabled]="!addForm.valid" class="btn btn-info">Login</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>

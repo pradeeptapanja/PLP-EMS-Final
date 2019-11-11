@@ -1,0 +1,93 @@
+<body>
+<form (ngSubmit)="displayDetails()" #addForm="ngForm">
+  
+  <div class="form-group">
+      <tr>
+          <td width="25%">Enter Employee ID : </td>
+          <td>
+          <input type="text" placeholder="Enter Employee ID" [(ngModel)]=employeeId name="empId" #empId=ngModel focused = false required pattern="[E]{2}[0-9]{5}" class="form-control" id="pan">
+          <span *ngIf="empId.touched && empId.invalid" class="alert-warning">
+              Invalid Employee ID. Should start with 'EE' followed by 5 integers. E.g. EE56015
+            </span>
+          </td>
+        </tr>
+    <button name="domainSearch" type="submit" [disabled]="addForm.valid" class="btn btn-info">View Employee Details</button>
+  </div>
+</form>
+
+<div [hidden]="found">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Employee PAN</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Domain</th>
+            <th scope="col">Employee Email</th>
+          </tr>
+        </thead>
+        
+          <tr >
+            <td>{{employee.empId}}</td> 
+            <td>{{employee.name}}</td>
+            <td>{{employee.pan}}</td>
+            <td>{{employee.designation}}</td>
+            <td>{{employee.domain}}</td>
+            <td>{{employee.email}}</td>
+            <!--<td><button class="btn btn-warning" (click)="delete(i)">Delete Customer</button></td>-->
+          </tr>
+        
+        <tr><td></td><td></td><td></td><td></td><td></td><td><button class="btn btn-info"> <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls></button></td></tr>
+      </table>
+    </div>
+<div class="container">
+    <h2>Update Details</h2>
+    <form (ngSubmit)="updateEmployee()" #addForm="ngForm">
+      <div class="container" style="padding: 8px;">
+        <div class="form-group"
+            style=" width: 1000px; opacity: 0.97; text-align: justify; background-color: khaki; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: larger;">
+            <table style="color: maroon; border-collapse: separate; " class="table table-hover">
+                <tr>
+                    <td width="25%">PAN Number : </td>
+                    <td>
+                    <input type="text" placeholder="Enter PAN" [(ngModel)]=pan name="panId" #panId=ngModel focused = false required pattern="[A-Z]{5}[0-9]{4}[A-Z]" class="form-control" id="pan" required>
+                    <span *ngIf="panId.touched && panId.invalid && (panId.errors.required || panId.errors.pattern)" class="alert-warning">
+                      Invalid PAN or name cannot be empty!
+                    </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="25%">Designation : </td>
+                    <td><select [(ngModel)]=designation name=desig #desig=ngModel required class="form-control">
+                      <option disabled selected>--Select--</option>
+                      <option *ngFor="let a of designations" >{{a}}</option>
+                    </select>
+                  </td></tr>
+                
+                  <tr>
+                    <td width="25%">Domain : </td>
+                    <td><select [(ngModel)]=domain name=dom #dom=ngModel required class="form-control">
+                      <option disabled selected>--Select--</option>
+                      <option *ngFor="let domain of domains" >{{domain}}</option>
+                    </select>
+                  </td></tr>
+                  <tr>
+                      <td width="25%">Salary : </td>
+                      <td>
+                      <input type="number" placeholder="Enter Salary" [(ngModel)]=salary name="sal" #sal=ngModel focused = false required pattern = "[1-9][0-9]{4,6}" class="form-control" id="salary" required>
+                      </td>
+                    </tr>
+                <tr><td colspan="2" align ="center">  
+                    <button type="submit" [disabled]="!addForm.valid" class="btn btn-info">Update Details</button>
+                    </td>
+                </tr>        
+              </table>    
+            </div>
+                
+          </div>        
+        </form>        
+      </div>
+    </body>
+      
+      

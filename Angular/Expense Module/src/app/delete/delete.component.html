@@ -1,0 +1,41 @@
+<body><form (ngSubmit)="searchExpense()" #addForm="ngForm">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th colspan="2">Delete Expense</th>
+        </tr>
+      </thead>
+  
+     <tr>
+        <td width="15%"><label for="expenseCode">Expense Code</label></td>
+        <td ><input name="expenseCode" [(ngModel)]=expense.expenseCode #expenseCode=ngModel required pattern="[0-9]{1,}" placeholder="Enter Expense Code">
+          <span *ngIf="expenseCode.touched && expenseCode.invalid && expenseCode.errors.required" class="alert-warning">
+            Expense Code is required here. Must be numbers.
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2"><button id="btn" type="submit" [disabled]="!addForm.valid" class="btn btn-success">Find</button>
+        </th>
+      </tr>
+  </table>
+  </form>
+
+
+<div [hidden]="!submitted">
+<table class="table table-bordered">
+  <tr>
+    <th>Expense Code</th>
+    <th>Expense Type</th>
+    <th>Expense Description</th>
+    <th>Delete</th>
+  </tr>
+  <tr>
+    <td>{{expense.expenseCode}}</td>
+    <td>{{expense.expenseType}}</td>
+    <td>{{expense.expenseDescription}}</td>
+    <td><button class="btn btn-warning" (click)="removeExpense()">Delete</button></td>
+  </tr>
+</table>
+</div>
+</body>

@@ -1,0 +1,79 @@
+<body>
+<form (ngSubmit)="updateProject()" #addForm="ngForm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th colspan="2">Update Project</th>
+      </tr>
+    </thead>
+
+    <tr>
+      <td width="15%"><label for="code">Project Code</label></td>
+      <td><input name="code" [(ngModel)]="project.code" #code=ngModel required
+        pattern="[0-9]{1,}" placeholder="Enter Project Code">
+        <span *ngIf="code.touched && code.invalid && 
+      (code.errors.required || code.errors.pattern)" class="alert-warning">
+          Project Code is required. Must be numbers.
+        </span>
+      </td>
+    </tr>
+   <tr>
+      <td><label for="description">Project Description</label></td>
+      <td><input name="description" [(ngModel)]=project.description #description=ngModel required           
+        placeholder="Enter Project Description">
+        <span *ngIf="description.touched && description.invalid && 
+       (description.errors.required || description.errors.pattern)" class="alert-warning">
+          Project description is required here.
+        </span>
+      </td>
+    </tr>
+
+    <tr>
+      <td><label for="startDate">Start Date</label></td>
+      <td><input type="date" name="startDate" [(ngModel)]=project.startDate class="form-control form-control-lg dateselect" min="{{minDate|date:'yyyy-MM-dd'}}" max="{{maxDate|date:'yyyy-MM-dd'}}"#startDate=ngModel required 
+          placeholder="Enter Start Date" >
+        <span *ngIf="startDate.touched && startDate.invalid && 
+     (startDate.errors.required || startDate.errors.pattern)" class="alert-warning">
+     Start Date is required
+        </span>
+      </td>
+    </tr>
+
+    <tr>
+      <td><label for="endDate">End Date</label></td>
+      <td><input type="date" name="endDate" [(ngModel)]=project.endDate class="form-control form-control-lg dateselect" min="{{minDate|date:'yyyy-MM-dd'}}" max="{{maxDate|date:'yyyy-MM-dd'}}" #endDate=ngModel required 
+          placeholder="Enter End Date" >
+        <span *ngIf="endDate.touched && endDate.invalid && 
+     (endDate.errors.required || endDate.errors.pattern)" class="alert-warning">
+     End Date is required
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="businessUnit">Business Unit</label></td>
+      <td><input name="businessUnit" [(ngModel)]=project.businessUnit #businessUnit=ngModel required           
+        placeholder="Enter Business Unit">
+        <span *ngIf="businessUnit.touched && businessUnit.invalid && 
+       (businessUnit.errors.required || businessUnit.errors.pattern)" class="alert-warning">
+       Business Unit is required here.
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="status">Status</label></td>
+      <td><input name="status" [(ngModel)]=project.status #status=ngModel required           
+        placeholder="Enter Project Status">
+        <span *ngIf="status.touched && status.invalid && 
+       (status.errors.required || status.errors.pattern)" class="alert-warning">
+       Status is required here.
+        </span>
+      </td>
+    </tr>
+
+    <tr>
+      <th colspan="2"><button id="btn" type="submit" [disabled]="!addForm.valid" class="btn btn-success">Make Changes</button>
+      </th>
+    </tr>
+  </table>
+</form>
+</body>

@@ -1,0 +1,50 @@
+2019-11-11-http-nio-7100-exec-2-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all claims method
+2019-11-11-http-nio-7100-exec-2-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all claims fetched
+2019-11-11-http-nio-7100-exec-3-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all finance user ids method
+2019-11-11-http-nio-7100-exec-3-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all finance user ids fetched
+2019-11-11-http-nio-7100-exec-4-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all finance user ids method
+2019-11-11-http-nio-7100-exec-4-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all finance user ids fetched
+2019-11-11-http-nio-7100-exec-5-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all finance user ids method
+2019-11-11-http-nio-7100-exec-5-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all finance user ids fetched
+2019-11-11-http-nio-7100-exec-7-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all finance user ids method
+2019-11-11-http-nio-7100-exec-7-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all finance user ids fetched
+2019-11-11-http-nio-7100-exec-9-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested log in method by user id: FEVB032
+2019-11-11-http-nio-7100-exec-9-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:user logged in with user id: FEVB032
+2019-11-11-http-nio-7100-exec-10-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all claims method
+2019-11-11-http-nio-7100-exec-10-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all claims fetched
+2019-11-11-http-nio-7100-exec-3-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested log in method by user id: FEVB032
+2019-11-11-http-nio-7100-exec-3-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:user logged in with user id: FEVB032
+2019-11-11-http-nio-7100-exec-4-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all claims method
+2019-11-11-http-nio-7100-exec-4-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all claims fetched
+2019-11-11-http-nio-7100-exec-1-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested reject claim method for claim id: 4
+2019-11-11-http-nio-7100-exec-1-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:Claim rejected successfully for claim id: 4
+2019-11-11-http-nio-7100-exec-6-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all finance user ids method
+2019-11-11-http-nio-7100-exec-6-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all finance user ids fetched
+2019-11-11-http-nio-7100-exec-7-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all finance user ids method
+2019-11-11-http-nio-7100-exec-7-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all finance user ids fetched
+2019-11-11-http-nio-7100-exec-9-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested log in method by user id: FEVB032
+2019-11-11-http-nio-7100-exec-9-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:user logged in with user id: FEVB032
+2019-11-11-http-nio-7100-exec-10-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all claims method
+2019-11-11-http-nio-7100-exec-10-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all claims fetched
+2019-11-11-http-nio-7100-exec-4-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested reject claim method for claim id: 8
+2019-11-11-http-nio-7100-exec-4-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:Claim rejected successfully for claim id: 8
+2019-11-11-http-nio-7100-exec-2-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all claims method
+2019-11-11-http-nio-7100-exec-2-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all claims fetched
+2019-11-11-http-nio-7100-exec-5-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all finance user ids method
+2019-11-11-http-nio-7100-exec-5-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all finance user ids fetched
+2019-11-11-http-nio-7100-exec-6-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all finance user ids method
+2019-11-11-http-nio-7100-exec-6-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all finance user ids fetched
+2019-11-11-http-nio-7100-exec-8-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all finance user ids method
+2019-11-11-http-nio-7100-exec-8-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all finance user ids fetched
+2019-11-11-http-nio-7100-exec-3-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested register new member method by user id: FE12345
+2019-11-11-http-nio-7100-exec-3-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:user registered with user id: FE12345
+2019-11-11-http-nio-7100-exec-4-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested register new member method by user id: FE12345
+2019-11-11-http-nio-7100-exec-4-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:user registered with user id: FE12345
+2019-11-11-http-nio-7100-exec-2-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested log in method by user id: FE12345
+2019-11-11-http-nio-7100-exec-2-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:user logged in with user id: FE12345
+2019-11-11-http-nio-7100-exec-1-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested fetch list of all claims method
+2019-11-11-http-nio-7100-exec-1-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:List of all claims fetched
+2019-11-11-http-nio-7100-exec-6-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested approve claim method for claim id: 10
+2019-11-11-http-nio-7100-exec-6-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:Claim approved successfully for claim id: 10
+2019-11-11-http-nio-7100-exec-8-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:requested reject claim method for claim id: 9
+2019-11-11-http-nio-7100-exec-8-INFO -com.cg.ems.finance.service.FinanceUserServiceImpl:Claim rejected successfully for claim id: 9

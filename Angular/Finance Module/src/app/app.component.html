@@ -1,0 +1,31 @@
+<html>
+   
+<head><link href="https://fonts.googleapis.com/css?family=Abel|Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+
+<h1 style="text-align: center"><b>Expense Management System</b></h1>
+<nav class="navbar navbar-dark bg-primary" style="background-color: #c5e7ff;">
+  <div class="container-fluid" id="div">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://localhost:4200/home"><img src="../assets/dollar-bill.png" ></a>
+    </div>
+    <ul class="navbar-nav nav">
+        <li><a [routerLink]="['home']">Finance Team</a></li>
+        <li><a [routerLink]="['home']">Home</a></li>
+        <li *ngIf = "!flag"><a [routerLink]="['register']">Register</a></li>
+        <li *ngIf = "!flag"><a [routerLink]="['login']">Login</a></li>
+        <li *ngIf = "flag"><a [routerLink]="['claim']">Claims</a></li>
+        <li *ngIf = "flag"><a [routerLink]="['updatedetails']">Update Details</a></li>
+        <!-- <li *ngIf = "flag"><a [routerLink]="['mobile']">Change Mobile</a></li>
+        <li *ngIf = "flag"><a [routerLink]="['email']">Change Email</a></li> -->
+    </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li *ngIf = "flag"><a [routerLink]="['logout']"><img src="../assets/sign-out-option.png"></a></li>
+    </ul>
+  </div>
+</nav>
+<body id = "bgimg" background="../assets/bg 2.jpg">
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div></body>
+</html>

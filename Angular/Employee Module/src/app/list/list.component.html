@@ -1,0 +1,28 @@
+<body><table class="table table-bordered">
+    <thead style="font-weight:bold">
+      <tr>
+        <th class="pointer" (click)="sort('empId')" scope="col">Employee ID</th>
+        <th class="pointer" (click)="sort('name')" scope="col">Employee Name</th>
+        <th class="pointer" (click)="sort('pan')" scope="col">Employee PAN</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Domain</th>
+        <th scope="col">Employee Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tra of employees| paginate: { itemsPerPage: 3, currentPage: p }; let i of index">
+        <th>{{tra.empId}}</th> 
+        <th>{{tra.name}}</th>
+        <th>{{tra.pan}}</th>
+        <th>{{tra.designation}}</th>
+        <th>{{tra.domain}}</th>
+        <th>{{tra.email}}</th>
+        <td><button class="btn btn-warning" (click)="delete(i)">Delete Customer</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class = "text-right">
+    <pagination-controls class="pagination" (pageChange)= "p = $event"></pagination-controls>
+  </div>
+  </body>

@@ -1,0 +1,38 @@
+<body>
+  <form (ngSubmit)="addExpense()" #addForm="ngForm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th colspan="2"><h4><b> Add New Expense </b></h4></th>
+      </tr>
+    </thead>
+
+   <tr>
+      <td width="15%"><label for="expenseType">Expense Type</label></td>
+      <td ><input name="expenseType" [(ngModel)]=expense.expenseType #expenseType=ngModel required pattern="[A-Z][a-z]{2,15}"
+          placeholder="Enter Expense Type" maxlength="15">
+        <span *ngIf="expenseType.touched && expenseType.invalid && 
+       (expenseType.errors.required || expenseType.errors.pattern)" class="alert-warning">
+          Expense Type is required here. (eg. Tom, Jerry, etc.)
+        </span>
+      </td>
+    </tr>
+
+    <tr>
+      <td><label for="expenseDescription">Expense Description</label></td>
+      <td><input name="expenseDescription" [(ngModel)]=expense.expenseDescription #expenseDescription=ngModel required pattern="[A-Za-z,. _]{15,100}"
+          placeholder="Enter Description" maxlength="100">
+        <span *ngIf="expenseDescription.touched && expenseDescription.invalid && 
+     (expenseDescription.errors.required || expenseDescription.errors.pattern)" class="alert-warning">
+     Expense Description is required, (eg. "Had to go to that Place","BEEN there Alredy","asdg_akjsdg,ASDHG.")
+        </span>
+      </td>
+    </tr>
+
+    <tr>
+      <th colspan="2"><button id="btn" type="submit" [disabled]="!addForm.valid" class="btn btn-success">Add Expense</button>
+      </th>
+    </tr>
+  </table>
+</form>
+</body>

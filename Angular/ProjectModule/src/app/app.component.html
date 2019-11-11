@@ -1,0 +1,32 @@
+<html>
+<head><link href="https://fonts.googleapis.com/css?family=Abel|Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+<h1 style="text-align: center">Expense Management System</h1>
+<nav class="navbar navbar-dark bg-primary" style="background-color: #c5e7ff;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a *ngIf = "!flag" class="navbar-brand" href="http://localhost:4200/home"><img src="../assets/appLogo.png"></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['home']">Project Module</a></li>
+        <li *ngIf = "!flag"><a [routerLink]="['login']">Login</a></li>
+        <!-- <li *ngIf = "!flag"><a href="http://localhost:4200"> Main Home</a></li> -->
+        <li *ngIf = "flag"><a [routerLink]="['add']">Add Project</a></li>
+        <li *ngIf = "flag"><a [routerLink]="['update']">Modify Project</a></li>
+        <li *ngIf = "flag"><a [routerLink]="['delete']">Delete Project</a></li>
+        <li *ngIf = "flag"><a [routerLink]="['display']">Display Project</a></li>
+        <li *ngIf = "flag"><a [routerLink]="['search']">Search Project</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+         <li *ngIf = "flag"><a [routerLink]="['logout']"><img src="../assets/sign-out-option.png"></a></li>
+        
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+  <body id = "bgimg" background="../assets/bg 2.jpg">
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div></body></html>

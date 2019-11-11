@@ -1,0 +1,94 @@
+<body><div class="container">
+    <h2>Register Employee</h2>
+    <form (ngSubmit)="registerEmployee()" #addForm="ngForm">
+      <div class="container" style="padding: 8px;">
+        <div class="form-group"
+            style=" width: 1000px; opacity: 0.97; text-align: justify; background-color: khaki; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: larger;">
+            <table style="color: maroon; border-collapse: separate; " class="table table-hover">
+              <tr>
+                <td width="25%">Employee ID : </td>
+                <td>
+                <input name="empId" type="text" placeholder="Enter Employee ID" [(ngModel)]=employee.empId  #empId=ngModel focused = false required pattern="[E]{2}[0-9]{5}" class="form-control" id="empId" required>
+                <span *ngIf="empId.touched && empId.invalid" class="alert-warning">
+                  Invalid Employee ID. Should start with 'EE' followed by 5 integers. E.g. EE56015
+                </span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td width="25%">First Name : </td>
+                <td>
+                <input name="name" type="text" placeholder="Enter Name" [(ngModel)]=employee.name  #name=ngModel focused = false required pattern="[A-Za-z]{5,}" class="form-control" id="name" required>
+                <span *ngIf="name.touched && name.invalid && (name.errors.required || name.errors.pattern)" class="alert-warning">
+                  Invalid name. Should start with 'A-Z' followed by combination of 'a-z'.
+                </span> 
+                </td>
+              </tr>
+              
+              <tr>
+                <td width="25%">PAN Number : </td>
+                <td>
+                <input name="pan" type="text" placeholder="Enter PAN" [(ngModel)]=employee.pan  #pan=ngModel focused = false required pattern="[A-Z]{5}[0-9]{4}[A-Z]" class="form-control" id="pan" required>
+                <span *ngIf="pan.touched && pan.invalid && (pan.errors.required || pan.errors.pattern)" class="alert-warning">
+                  Invalid PAN. Follow pattern - ABCDE1234F
+                </span>
+                </td>
+              </tr>
+              <tr>
+                <td width="25%">Designation : </td>
+                <td><select [(ngModel)]="employee.designation" name="designation" #city=ngModel required class="form-control">
+                  <option disabled selected>--Select--</option>
+                  <option *ngFor="let a of designations" >{{a}}</option>
+                </select>
+              </td></tr>
+            
+              <tr>
+                <td width="25%">Domain : </td>
+                <td><select [(ngModel)]="employee.domain" name="domain" #domain=ngModel required class="form-control">
+                  <option disabled selected>--Select--</option>
+                  <option *ngFor="let domain of domains" >{{domain}}</option>
+                </select>
+              </td></tr>
+              <tr>
+                <td width="25%">Date Of Birth : </td>
+                <td>
+                  <div class="form-group">
+                    <!-- <label for="date_of_journey">Date Of Journey</label>-->
+                    <input type="date" class="form-control form-control-lg dateselect" min="1975-01-01" max="2000-01-01" name="dateOfBirth" [(ngModel)]="employee.dateOfBirth">
+                </div>
+                </td>
+              </tr>
+             
+            
+                <tr>
+                  <td width ="25%">Email id : </td>
+                  <td><input name="email" type="email" placeholder="abc@xyz.com" [(ngModel)]=employee.email  #email=ngModel required pattern="^\w+@[a-zA-Z._]+?\.[a-zA-Z]{2,3}$" class="form-control" id="email" required>
+                    <span *ngIf="email.touched && email.invalid && (email.errors.required || email.errors.pattern)" class="alert-warning">
+                      Invalid email id. Follow pattern - abc123@any.com
+                    </span>
+                  </td>
+              
+              </tr>
+      
+              <tr>
+                <td width ="25%">Password : </td>
+                <td>
+                  <input type="password" placeholder="Enter password" [(ngModel)]=employee.password name="password" #password=ngModel required pattern="[A-Za-z0-9.@&^%$#@!/]{6,}" class="form-control" id="password" required>
+                  <span *ngIf="password.touched && password.invalid && (password.errors.required || password.errors.pattern)" class="alert-warning">
+                    Invalid password. Must be atleast 6 characters long.
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><ng2-password-strength-bar [passwordToCheck]="employee.password" [barLabel]="barLabel" [barColors]="myColors"></ng2-password-strength-bar></td>
+              </tr>
+            <tr><td colspan="2" align="center">  
+            <button id="btn" type="submit" [disabled]="!addForm.valid" class="btn btn-success">Register Employee</button>
+            </td></tr>
+             </table>
+         </div>
+      </div>
+      </form>
+      </div>
+      </body>

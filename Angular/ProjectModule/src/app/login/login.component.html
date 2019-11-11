@@ -1,0 +1,87 @@
+<!-- <div class="container">
+    <h2>Login</h2>
+    <form (ngSubmit)="loginAdmin()" #addForm="ngForm">
+      <div class="container" style="padding: 8px;">
+        <div class="form-group"
+            style=" width: 1000px; opacity: 0.97; text-align: justify; background-color: rgb(172, 240, 140); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: larger;">
+            <table style="color: rgb(46, 154, 197); border-collapse: separate; " class="table table-hover">
+              <tr>
+                <td width="25%">Enter User ID : </td>
+                <td>
+                <input type="text" placeholder="Enter User ID" [(ngModel)]=adminId name="adminId" #userId=ngModel focused = false  class="form-control" id="adminId" required>
+                </td>
+              </tr>
+  
+              <tr>
+                <td width="25%">Enter Password : </td>
+                <td>
+                <input type="text" placeholder="Enter Password" [(ngModel)]=adminPassword name="adminPassword" #userPassword=ngModel focused = false class="form-control" id="adminPassword"  minlength="5" maxlength="50" required>
+                </td>
+              </tr>
+            <tr>
+                <td colspan="2" align="center">  
+                <button type="submit" [disabled]="!addForm.valid" class="btn btn-info">Login</button>
+                </td>
+              </tr>
+            </table>
+         </div>
+      </div>
+    </form>
+  </div> -->
+<!-- <div class="container">
+  <h2>Login</h2>
+  <form (ngSubmit)="loginAdmin()" #addForm="ngForm">
+    <div class="container" style="padding: 8px;">
+      <div class="form-group"
+          style=" width: 1000px; opacity: 0.97; text-align: justify; background-color: rgb(172, 240, 140); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: larger;">
+          <table style="color: rgb(46, 154, 197); border-collapse: separate; " class="table table-hover">
+            <tr>
+              <td width="25%">Enter User ID : </td>
+              <td>
+              <input type="text" placeholder="Enter User ID" [(ngModel)]=admin.adminId name="adminId" #userId=ngModel focused = false  class="form-control" id="adminId" required>
+              </td>
+            </tr>
+            <tr>
+              <td width="25%">Enter Password : </td>
+              <td>
+              <input type="password" placeholder="Enter Password" [(ngModel)]=admin.adminPassword name="adminPassword" #userPassword=ngModel focused = false class="form-control" id="adminPassword"  minlength="5" maxlength="50" required>
+              </td>
+            </tr>
+          <tr>
+              <td colspan="2" align="center">  
+              <button type="submit" [disabled]="!addForm.valid" class="btn btn-info">Login</button>
+              </td>
+            </tr>
+          </table>
+       </div>
+    </div>
+  </form>
+</div> -->
+
+<body>
+  <div class="container">
+    <section id="content">
+      <form (ngSubmit)="loginAdmin()" #addForm="ngForm">
+        <h1>Login Admin</h1>
+        <div class="row">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-10">
+            <div>
+              <input type="text" placeholder="Enter User ID" [(ngModel)]=adminId name="adminId" #userId=ngModel
+                focused=false class="form-control" id="adminId" required>
+                
+            </div>
+            <div>
+              <input type="password" placeholder="Enter Password" [(ngModel)]=adminPassword name="adminPassword"
+                #userPassword=ngModel focused=false class="form-control" id="adminPassword" minlength="5" maxlength="50"
+                required>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button type="submit" [disabled]="!addForm.valid" class="btn btn-info">Login</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>

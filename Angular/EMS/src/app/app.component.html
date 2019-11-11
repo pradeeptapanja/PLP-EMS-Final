@@ -1,0 +1,33 @@
+<html>
+   
+<head><link href="https://fonts.googleapis.com/css?family=Abel|Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+
+<h1 style="text-align: center">Expense Management System</h1>
+<nav class="navbar navbar-dark bg-primary" style="background-color: #c5e7ff;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="['home']"><img src="../assets/dollar-bill.png" ></a>
+    </div>
+    <ul class="nav navbar-nav">
+      
+        <!--<li><a [routerLink]="['home']">Home</a></li> -->
+        <li><a href="http://localhost:4201">Employee</a></li>
+        <li><a href="http://localhost:4205">Manage Employee</a></li>
+        <li><a href="http://localhost:4615">Projects</a></li>
+        <li><a href="http://localhost:4620">Expense Type</a></li>
+        <li><a href="http://localhost:4206">Finance Team</a></li>
+
+       
+        <!--<li *ngIf = "flag"><a>Welcome, {{employee.name}}</a></li>-->
+    </ul>
+  </div>
+</nav>
+<!-- <body id = "bgimg" background="../assets/bg 2.png"> -->
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+<!-- </body> -->
+</html>
+
+

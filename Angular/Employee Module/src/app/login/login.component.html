@@ -1,0 +1,60 @@
+<!-- <div class="container">
+  <h2>Login Employee</h2>
+  <form (ngSubmit)="loginEmployee()" #addForm="ngForm">
+    <div class="container" style="padding: 8px;">
+      <div class="form-group"
+          style=" width: 1000px; opacity: 0.97; text-align: justify; background-color: khaki; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: larger;">
+          <table style="color: maroon; border-collapse: separate; " class="table table-hover">
+            <tr>
+              <td width="25%">Employee ID : </td>
+              <td>
+              <input type="text" placeholder="Enter Employee ID" [(ngModel)]=empId name="empId" #empName=ngModel focused = false required pattern="[E]{2}[0-9]{5}" class="form-control" id="empId" required>
+              </td>
+            </tr>
+            <tr>
+              <td width ="25%">Password : </td>
+              <td><input type="password" placeholder="Enter password" [(ngModel)]=password name="password" #empPassword=ngModel class="form-control" id="password" required>
+            
+              </td>
+            </tr>
+            <tr><td colspan="2" align="center">  
+              <button type="submit" [disabled]="!addForm.valid" class="btn btn-info">Login</button>
+              </td></tr>
+               </table>
+           </div>
+        </div>
+        </form>
+        </div> -->
+
+        <body>
+          <div class="container">
+            <section id="content">
+              <form (ngSubmit)="loginEmployee()" #addForm="ngForm">
+                <h1>Login Employee</h1>
+                <div class="row">
+                  <div class="col-xs-2"></div>
+                  <div class="col-xs-10">
+                    <div>
+                      <input type="text" placeholder="Enter Employee ID" [(ngModel)]=empId name="empIdS"
+                        #empIdS=ngModel required pattern="[E]{2}[0-9]{5}" focused=false class="form-control" id="empIdS" required>
+                        <span *ngIf="empIdS.touched && empIdS.invalid" class="alert-warning">
+                          Invalid Employee ID. Should start with 'EE' followed by 5 integers. E.g. EE56015
+                        </span>
+                    </div>
+                    <div>
+                      <input type="password" placeholder="Enter Password" [(ngModel)]=password
+                        name="passwordS" #empPassword=ngModel focused=false class="form-control"
+                        id="passwordS" minlength="5" maxlength="50" required>
+                        <span *ngIf="passwordS.touched && passwordS.invalid && (passwordS.errors.required || passwordS.errors.pattern)" class="alert-warning">
+                          Invalid password. Must be atleast 6 characters long.
+                        </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button type="submit" [disabled]="!addForm.valid" class="btn btn-info">Login</button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </body>

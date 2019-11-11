@@ -1,0 +1,39 @@
+<body>
+  <form (ngSubmit)="updatePassword()" #passwordForm="ngForm" style="padding-left: 49%; padding-top: 10px">
+<table>
+  <tr>
+    <td>
+      <button type="submit" class="btn btn-info">Change Password</button>
+    </td>
+  </tr>
+</table>
+
+<span>
+  <hr>
+</span>
+
+</form>
+<form (ngSubmit)="updateEmail()" #emailForm="ngForm" style="padding-left: 50%; padding-top: 10px">
+  <table>
+    <tr>
+      <td>
+        <button type="submit" class="btn btn-info">Change E-Mail</button>
+      </td>
+    </tr>
+  </table>
+
+  <span>
+    <hr>
+  </span>
+
+  </form>
+  <form (ngSubmit)="updateMobile()" #mobileForm="ngForm" style="padding-left: 50%; padding-top: 10px; padding-bottom: 10px">
+    <table>
+      <tr>
+        <td>
+          <button type="submit" class="btn btn-info">Change Mobile</button>
+        </td>
+      </tr>
+    </table>
+    </form>
+    </body>

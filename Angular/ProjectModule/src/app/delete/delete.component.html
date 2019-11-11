@@ -1,0 +1,48 @@
+<body>
+<form (ngSubmit)="findProject()" #addForm="ngForm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th colspan="2">Delete Project</th>
+      </tr>
+    </thead>
+
+   <tr>
+      <td width="15%"><label for="projectCode">Project Code</label></td>
+      <td ><input name="projectCode" [(ngModel)]=project.projectCode #projectCode=ngModel required pattern="[0-9]{1,}" placeholder="Enter Project Code">
+        <span *ngIf="projectCode.touched && projectCode.invalid && projectCode.errors.required" class="alert-warning">
+          Project Code is required here. Must be number.
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2"><button id="btn" type="submit" [disabled]="!addForm.valid" class="btn btn-success">Find</button>
+      </th>
+    </tr>
+</table>
+</form>
+
+<table class="table table-bordered">
+    
+  <tr>
+<th>Code</th>    
+<th>Description</th>
+<th>Start Date</th>
+<th>End Date</th>
+<th>Business Unit</th>
+<th>Status</th>
+<th>action</th>
+  </tr>
+
+  <tr>
+      <td>{{project.projectCode}}</td>
+      <td>{{project.projectDescription}}</td>
+      <td>{{project.startDate}}</td>
+      <td>{{project.endDate}}</td>
+      <td>{{project.businessUnit}}</td>
+      <td>{{project.status}}</td>
+      <td><button class="btn btn-warning" (click) = "removeProject()">Delete</button></td>
+      </tr>
+      
+</table>
+</body>

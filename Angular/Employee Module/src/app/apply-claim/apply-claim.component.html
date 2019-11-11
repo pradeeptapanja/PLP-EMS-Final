@@ -1,0 +1,91 @@
+<body>   
+  <form (ngSubmit)="addClaim()" #addForm="ngForm" style="background-color: whitesmoke">
+    <form>
+    <div class="form-group">
+    <label >Enter Employee Id</label><br> 
+  <input  style="width:200px; height:30px;" type="text" [(ngModel)]=claim.employeeId name="empId" #empId=ngModel placeholder="Enter Employee ID" required pattern="[E][E][0-9]{5}">
+    <span *ngIf="empId.touched && empId.invalid && (empId.errors.required || empId.errors.pattern)" class="alert-warning">
+      Invalid name or field Empty !!
+    </span>
+    <button class="btn btn-success" (click)="showEmp()">Search</button>
+   
+    <table *ngIf="empExist" class="table table-bordered">
+        <tr>
+        <th>Name</th>    
+        <th>Pan</th>
+        <th>Designation</th>
+        <th>Domain</th>
+        <th>Date Of Birth</th>
+        <!--<th>Date Of Birth</th>-->
+        <th>Salary</th>
+        <th>Email</th>
+        <th>BankName</th>
+        <th>Account Number</th>
+          </tr>
+          <tr>
+              <td>{{employeeDetails.name}}</td>
+              <td>{{employeeDetails.pan}}</td>
+              <td>{{employeeDetails.designation}}</td>
+              <td>{{employeeDetails.domain}}</td>
+              <td>{{employeeDetails.dateOfBirth}}</td>
+              <td>{{employeeDetails.salary}}</td>
+              <td>{{employeeDetails.email}}</td>
+              <td>{{employeeDetails.bankName}}</td>
+              <td>{{employeeDetails.accountNumber}}</td>
+            </tr>
+
+    </table>
+  </div>
+</form> 
+  <div class="form-group" style="width: 200px">
+    <label>Enter ProjectId</label>
+      <select class="form-control" #projectId=ngModel [(ngModel)]=claim.projectId name="projectId" inpu> 
+        <option *ngFor="let projectId of projectIds" [value]="projectId">{{projectId}}</option>
+      </select>
+    </div>
+
+    <div class="form-group"style="width: 200px">
+      <label>Enter ExpenseId</label>
+        <select class="form-control" #expenseId=ngModel [(ngModel)]=claim.expenseId name="expenseId"> 
+          <option *ngFor="let expenseId of expenseIds" [value]="expenseId">{{expenseId}}</option>
+        </select>
+      </div>
+
+      <div class="form-group"style="width: 200px">
+        <label>Enter ClientId</label>
+          <select class="form-control" #clientId=ngModel [(ngModel)]=claim.clientId name="clientId"> 
+            <option *ngFor="let clientId of clientIds" [value]="clientId">{{clientId}}</option>
+          </select>
+        </div> 
+      
+        <div class="form-group"style="width: 200px">
+          <label>Enter FinanceUserId</label>
+            <select class="form-control" #financeUserId=ngModel [(ngModel)]=claim.financeUserId name="financeUserId"> 
+              <option *ngFor="let financeUserId of financeUserIds" [value]="financeUserId">{{financeUserId}}</option>
+            </select>
+          </div> 
+
+
+  <div class="form-group"style="width: 200px">
+    <label>Enter Amount</label>
+    <input type="number" [(ngModel)]=claim.amount name="amount" #amount=ngModel placeholder="Enter your amount ..." required pattern="[1-9][0-9]{3,}"><br>
+    <span *ngIf="amount.touched && amount.invalid && (amount.errors.required || amount.errors.pattern)" class="alert-warning">
+        Invalid Amount or field Empty !!
+      </span>
+  </div>
+  <div class="form group"style="width: 200px">
+    <label>Enter Claim Date</label>
+    <input type="date" [(ngModel)]=claim.startDate name="startDate" #startDate=ngModel><br>
+  </div><br>
+
+<div class="form group"style="width: 200px">
+  <label>Enter Description</label>
+  <input type="text" [(ngModel)]=claim.description name="description" #description=ngModel>
+  
+</div>
+  <div class="form group">
+    <br>
+    <button class="btn btn-success" type="submit" [disabled]="!addForm.valid">Add Expense Claim</button>
+  </div>
+</form>
+</body>

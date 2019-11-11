@@ -1,0 +1,41 @@
+<body><div class="container">
+  <h2>Add Bank Details</h2>
+  <form (ngSubmit)="addBankDetails()" #addForm="ngForm">
+    <div class="container" style="padding: 8px;">
+      <div class="form-group"
+          style=" width: 1000px; opacity: 0.97; text-align: justify; background-color: khaki; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: larger;">
+          <table style="color: maroon; border-collapse: separate; " class="table table-hover">
+            <tr>
+              <td width="25%">Bank Name : </td>
+              <td><select [(ngModel)]="bankName" name="bankName" #city=ngModel required class="form-control">
+                <option disabled selected>--Select--</option>
+                <option *ngFor="let bank of banks" >{{bank}}</option>
+              </select>
+            </td></tr>
+
+            <tr>
+              <td width="25%">Account Number : </td>
+              <td>
+              <input type="number" placeholder="Enter Account No." [(ngModel)]=accountNo name="accountNo" #name=ngModel focused = false required pattern="[1-9][0-9]{9}" class="form-control" id="accountNo" required>
+              </td>
+            </tr>
+
+            <tr>
+              <td width="25%">Salary : </td>
+              <td>
+              <input type="number" placeholder="Enter Salary" [(ngModel)]=salary name="salary" #name=ngModel focused = false  class="form-control" id="salary" required>
+              </td>
+            </tr>
+           <tr>
+              <td colspan="2" align="center">  
+              <button type="submit" [disabled]="!addForm.valid" class="btn btn-info">Add Bank Details</button>
+              </td>
+            </tr>
+          </table>
+       </div>
+    </div>
+  </form>
+</div>
+    
+
+</body>
